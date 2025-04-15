@@ -103,6 +103,9 @@ jobs:
           docker info
           cat ~/.docker/config.json
           whoami
+          for img in kurtosistech/engine:1.4.3 timberio/vector:0.31.0-debian traefik:2.10.6 alpine:3.17; do
+            docker pull $img
+          done
           kurtosis engine start
         if: ${{ matrix.args == 'test-e2e' }}
       - name: Run ${{ matrix.args }}

@@ -101,6 +101,8 @@ jobs:
           sudo apt update
           sudo apt install kurtosis-cli=$(go list -m -f '{{.Version}}' github.com/kurtosis-tech/kurtosis/api/golang | sed 's/^v//') -y
           docker info
+          cat ~/.docker/config.json
+          whoami
           kurtosis engine start
         if: ${{ matrix.args == 'test-e2e' }}
       - name: Run ${{ matrix.args }}

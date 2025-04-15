@@ -63,8 +63,7 @@ jobs:
         os:
           - ubuntu-24.04-e2e
     name: ${{ matrix.args }}
-    runs-on:
-      labels: ${{ matrix.os }}
+    runs-on: "Ubuntu"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
